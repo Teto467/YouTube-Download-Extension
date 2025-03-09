@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube動画ダウンローダー</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Meiryo UI', sans-serif;
+      width: 300px;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+    
+    h1 {
+      font-size: 16px;
+      color: #cc0000;
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+    
+    .section {
+      margin-bottom: 15px;
+    }
+    
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    select, input {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    .status {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .status-online {
+      background-color: #4CAF50;
+    }
+    
+    .status-offline {
+      background-color: #F44336;
+    }
+    
+    button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+    }
+    
+    button:hover {
+      background-color: #ff0000;
+    }
+    
+    .info {
+      font-size: 12px;
+      color: #666;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube動画ダウンローダー</h1>
+  
+  <div class="section">
+    <div class="section-title">デフォルト設定</div>
+    
+    <label for="default-resolution">デフォルト解像度:</label>
+    <select id="default-resolution">
+      <option value="360">360p</option>
+      <option value="720">720p</option>
+      <option value="1080" selected>1080p</option>
+      <option value="best">最高画質</option>
+    </select>
+    
+    <label for="default-format">デフォルトフォーマット:</label>
+    <select id="default-format">
+      <option value="mp4" selected>MP4</option>
+      <option value="webm">WebM</option>
+      <option value="mp3">MP3 (音声のみ)</option>
+    </select>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">保存設定</div>
+    <label for="download-path">ダウンロード先フォルダ:</label>
+    <div class="path-input">
+      <input type="text" id="download-path" placeholder="デフォルトのダウンロードフォルダ">
+      <button id="browse-path" title="フォルダを選択">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <path fill="currentColor" d="M14 5H9L7 3H2C1 3 0 4 0 5v6c0 1 1 2 2 2h12c1 0 2-1 2-2V7c0-1-1-2-2-2z"/>
+        </svg>
+      </button>
+    </div>
+    <button id="save-path">変更を保存</button>
+  </div>
+  
+  <div class="section">
+    <div class="status">
+      <div class="status-indicator" id="server-status"></div>
+      <span id="status-text">サーバーステータスを確認中...</span>
+    </div>
+    <button id="start-server">サーバー起動</button>
+  </div>
+  
+  <div class="info">
+    <p>バージョン: 1.0.0</p>
+    <p>© 2025 YouTube動画ダウンローダー</p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

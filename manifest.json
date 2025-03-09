@@ -1,0 +1,31 @@
+{
+    "name": "YouTube動画ダウンローダー",
+    "version": "1.0.0",
+    "description": "YouTube動画を様々な解像度・フォーマットでダウンロードできる拡張機能",
+    "author": "Teto",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab",
+        "downloads",
+        "nativeMessaging"
+    ],
+    "host_permissions": [
+        "https://*.youtube.com/*",
+        "http://localhost:8745/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["content.js"],
+            "css": ["styles.css"]
+        }
+    ],
+    "action": {
+        "default_title": "YouTube動画ダウンローダー"
+    }
+}

@@ -1,0 +1,113 @@
+/* styles.css */
+.ytp-download-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.ytp-download-menu {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background: rgba(28, 28, 28, 0.9);
+    border-radius: 4px;
+    padding: 12px;
+    z-index: 1000;
+    color: white;
+}
+
+.format-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.format-options select {
+    background: #2d2d2d;
+    color: white;
+    border: 1px solid #444;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.format-options button {
+    background: #cc0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.format-options button:hover {
+    background: #ff0000;
+}
+
+.format-options button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.download-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: #fff;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.download-status {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 8px;
+    text-align: center;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.path-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.path-input input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.path-input button {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#save-path {
+    width: 100%;
+    margin-top: 8px;
+}

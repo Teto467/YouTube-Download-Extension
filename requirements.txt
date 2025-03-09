@@ -1,0 +1,5 @@
+flask==2.0.1
+requests==2.26.0
+colorama>=0.4.4
+pywin32==303
+werkzeug==2.0.1
